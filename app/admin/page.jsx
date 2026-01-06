@@ -52,3 +52,22 @@ export default function AdminPage() {
     </div>
   );
 }
+
+export default function Home() {
+    return (
+      <main style={{ padding: 40 }}>
+        <h1>Fynd AI Review System</h1>
+        <p>Choose a dashboard:</p>
+  
+        <ul>
+          <li>
+            <a href="/user">User Dashboard</a>
+          </li>
+          <li>
+            <a href="/admin">Admin Dashboard</a>
+          </li>
+        </ul>
+      </main>
+    );
+  }
+  
