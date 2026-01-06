@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Fynd AI – Review Intelligence System
 
-## Getting Started
+This project is a full-stack AI-powered review analysis system built using Next.js, MongoDB, and Large Language Models via OpenRouter. It allows users to submit reviews and receive AI-generated responses, while admins can view insights, summaries, and recommendations derived from those reviews.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+User Dashboard:
+- Submit a review with a rating from 1 to 5
+- Receive a polite AI-generated response
+- Handles empty or invalid input gracefully
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Admin Dashboard:
+- View all submitted reviews
+- Display user rating and original review
+- View AI-generated response
+- View AI-generated summary
+- View AI-generated business recommendations
+- Data persists using MongoDB
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+AI Capabilities:
+- Generates a polite user-facing response
+- Summarizes the review in one sentence
+- Suggests recommended actions for business improvement
+- All LLM calls are performed server-side
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## LLM Used
 
-## Learn More
+- Model: mistralai/mistral-7b-instruct
+- Provider: OpenRouter
+- Usage: Response generation, summarization, recommendations
 
-To learn more about Next.js, take a look at the following resources:
+## Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Frontend: Next.js 14 (App Router)
+- Backend: Next.js API Routes
+- Database: MongoDB Atlas
+- AI Integration: OpenRouter API
+- Deployment: Vercel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+app/
+- page.jsx
+- user/page.jsx
+- admin/page.jsx
+- api/
+  - review/route.js
+  - reviews/route.js
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+lib/
+- mongodb.js
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Environment Variables
+
+Create a .env.local file locally with the following values:
+
+OPENROUTER_API_KEY=your_openrouter_api_key  
+MONGODB_URI=your_mongodb_connection_string  
+
+These environment variables are also configured on Vercel for production deployment.
+
+## Running Locally
+
+npm install  
+npm run dev  
+
+Open the application in your browser:
+
+User Dashboard: http://localhost:3000/user  
+Admin Dashboard: http://localhost:3000/admin  
+
+## Deployment
+
+The application is deployed on Vercel and is publicly accessible.
+
+Routes:
+- /user – User review submission interface
+- /admin – Admin dashboard to view AI-processed reviews
+
+## Assignment Compliance
+
+- Web-based dashboards implemented
+- Shared persistent data source using MongoDB
+- Server-side LLM usage only
+- Explicit API endpoints for AI processing
+- Graceful error handling
+- Public deployment via Vercel
+
+## Author
+
+Built as part of an AI/LLM engineering assignment.
