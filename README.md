@@ -1,4 +1,4 @@
-# Fynd AI – Review Intelligence System
+# Review Intelligence System
 
 This project is a full-stack AI-powered review analysis system built using Next.js, MongoDB, and Large Language Models via OpenRouter. It allows users to submit reviews and receive AI-generated responses, while admins can view insights, summaries, and recommendations derived from those reviews.
 
